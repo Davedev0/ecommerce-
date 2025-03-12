@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign In</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 280px; 
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom:15px;
+            font-size: 25px;
+            color: #333;
+        }
+        .login-container i {
+            margin-right: 10px;
+            color: #088178; 
+        }
+        .login-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .login-container input:focus {
+            border-color: #088178; 
+            outline: none;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #088178; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: none;
+            margin-top: 10px;
+        }
+        .login-container button:hover {
+            background-color: #057862; 
+            color:white;
+        }
+        .error-message {
+            color: darkred;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        
+         .success-message{
+            color: darkgreen;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        @media (max-width:649px){
+          .login-container{
+            max-width: 260px;
+          }
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+     <h1><i class="fas fa-lock"></i>Admin Portal</h1>
+     <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Sign In</button>
+       <div id="success-message" class="success-message">
+        </div>
+        <div id="error-message" class="error-message">
+        </div>
+
+    <script src="config-admin-signin.js"></script>
+</body>
+</html>

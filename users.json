@@ -1,0 +1,61 @@
+[
+  {
+    "fullname": "dave ",
+    "email": "juan.delacruz@example.com",
+    "location": "Manila, Philippines",
+    "gender": "Male",
+    "orders": [
+      {
+        "image": "https://example.com/image1.jpg",
+        "name": "Product A",
+        "price": 1000,
+        "size": "Medium",
+        "quantity": 2
+      },
+      {
+        "image": "https://example.com/image2.jpg",
+        "name": "Product B",
+        "price": 1500,
+        "size": "Large",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "fullname": "Maria Clara",
+    "email": "maria.clara@example.com",
+    "location": "Cebu, Philippines",
+    "gender": "Female",
+    "orders": [
+      {
+        "image": "https://example.com/image3.jpg",
+        "name": "Product C",
+        "price": 2000,
+        "size": "Small",
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "fullname": "Pedro Penduko",
+    "email": "pedro.penduko@example.com",
+    "location": "Davao, Philippines",
+    "gender": "Male",
+    "orders": [
+      {
+        "image": "https://example.com/image4.jpg",
+        "name": "Product D",
+        "price": 2500,
+        "size": "Large",
+        "quantity": 1
+      },
+      {
+        "image": "https://example.com/image5.jpg",
+        "name": "Product E",
+        "price": 3000,
+        "size": "Medium",
+        "quantity": 2
+      }
+    ]
+  }
+]

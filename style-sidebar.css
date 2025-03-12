@@ -1,0 +1,184 @@
+        /* Sidebar Styles */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: -350px; 
+            width: 350px;
+            height: 100%;
+            background: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        #sidebar.active {
+            right: 0; /* Show sidebar */
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #088178;
+            color: white;
+            text-align: left;
+        }
+        
+        #sidebar .sidebar-header i{
+          padding-right: 8px;
+        }
+
+        #sidebar .sidebar-content {
+            padding: 20px;
+        }
+
+        #sidebar .close-sidebar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: none;
+        }
+
+        /* Overlay Styles */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(2px); 
+            z-index: 999;
+            display: none;
+        }
+
+        #overlay.active {
+            display: block;
+        }
+
+        /* Cart Item Styles */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-details h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #088178;
+        }
+
+        .cart-item-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .remove-button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Order Summary Styles */
+        .order-summary {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .order-summary h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #088178;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary td {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-summary tr:last-child td {
+            border-bottom: none;
+        }
+
+        .order-summary td:last-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+                /* Checkout Button */
+        .checkout-button {
+            background-color: #088178;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: none;
+            margin-top: 20px;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+        .checkout-button:hover {
+            background-color: #057862; 
+            color:white;
+        }
+        
+        .notification-badge {
+             position:absolute;
+            top: -10px;
+            right: 2px;
+            background-color: #ff4d4d;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 7px;
+            font-size: 10px;
+        }
+        
+         #mobile{
+          z-index: -999;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            #sidebar.active {
+                right:0;
+            }
+             .notification-badge{
+              top:7px;
+              right: 60px;
+              font-size:12px;
+            }
+        }
