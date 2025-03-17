@@ -4,46 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | E-commers 2025</title>
+    <title>Home Page</title>
+    <!--link-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_bag_speed" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One|Libre+Baskerville">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style-sidebar.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
+  <!--- style files --->
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style-sidebar.css"/>
+<link rel="stylesheet" href="style-success.css">
+<link rel="stylesheet" href="style-alert.css">
 </head>
 <body>
-  
   <!--------------Header & Navbar-------------->
-    <section id="header">
-        <div class="logo-header">Shopeefy</div>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="sproduct.html">Cart</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag">
-                    <a class="cart-icon" onclick="openSidebar()">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="notification-badge" id="cart-notification">0</span>
-                    </a>
-                </li>
-                <a href="#" id="close"><i class="fas fa-times"></i></a>
-                <button><a href="sign-in.html">Sign In</a></button>
-            </ul>
-        </div>
-        <div id="mobile">
-            <div class="logo-mobile">Shopeefy</div>
-            <a class="cart-icon" onclick="openSidebar()">
-                <i id="bag" class="fas fa-shopping-bag"></i>
-                <span class="notification-badge" id="cart-notification-mobile"></span>
-            </a>
-            <i id="bar" class="fas fa-outdent"></i>
-        </div>
-    </section>
+<section id="header">
+  <div class="logo-header">Shopeefy</div>
+   <div>
+    <ul id="navbar">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="sproduct.html">Cart</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li id="lg-bag"> <a class="cart-icon" onclick="openSidebar()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="notification-badge" id="cart-notification">0</span> </a> </li>
+      <a href="#" id="close"><i class="fas fa-times"></i></a>
+      <button><a id="SignIn-button" href="sign-in.html">Sign In</a></button>
+    </ul>
+  </div>
+  <div id="mobile">
+  <div class="logo-mobile">Shopeefy</div>
+   <a class="cart-icon" onclick="openSidebar()">
+    <i id="bag" class="fas fa-shopping-bag"></i>
+     <span class="notification-badge" id="cart-notification-mobile"></span>
+     </a>
+       <i id="bar" class="fas fa-outdent"></i>
+    </div>
+</section>
     
     <a href="javascript:void(0);" id="backToTop" class="back-to-top">
         <i class="fa fa-angle-double-up"></i>
@@ -57,7 +58,7 @@
         </div>
         <div class="sidebar-content">
             <div id="cart-items-sidebar">
-                <!-- Cart items will be dynamically inserted here -->
+                <!--orders-->
             </div>
             <div class="order-summary">
                 <h3>Order Summary</h3>
@@ -67,7 +68,7 @@
                         <td id="subtotal-price-sidebar">₱0</td>
                     </tr>
                     <tr>
-                        <td>Discount (20%)</td>
+                        <td>Discount</td>
                         <td id="discount-sidebar">-₱0</td>
                     </tr>
                     <tr>
@@ -76,18 +77,77 @@
                     </tr>
                 </table>
             </div>
+           <a id="payment-button"><button class="payment-button">Online Payment</button></a>
            <button class="checkout-button" id="checkout-button">Proceed to Checkout</button>
         </div>
     </div>
+  
+  <!--loading screen-->
+    <div id="loading-screen">
+     <div class="loader"></div>
+    <div class="loading-text"> Loading...</div>
+  </div>
+
 
     <!-- Overlay -->
     <div id="overlay" onclick="closeSidebar()"></div>
 
-    
+
+  <!-- Success Alert Box -->
+<div class="success-alert-box" id="success-alert-box">
+    <div class="icon">
+        <i class="fas fa-check"></i> 
+    </div>
+    <h2>Successfully Checkout</h2>
+   <p>Your order has been successfully completed</p>
+</div>
+
+<!-- Confirmation Box for Remove Order -->
+<div class="overlay" id="remove-overlay"></div>
+<div class="confirmation-box" id="remove-confirmation-box">
+    <div class="icon">
+        <i class="fas fa-trash-o"></i>
+    </div>
+  <h2 style="margin-top:12px;">Confirmation</h2>
+    <p>Are you sure you want to remove?</p>
+    <div class="buttons">
+        <button class="yes-btn" id="confirm-remove-btn">Yes</button>
+        <button class="no-btn" id="cancel-remove-btn">No</button>
+    </div>
+</div>
+
+
+<!-- Success Alert Box Removed-->
+<div class="success-alert-box" id="success-alert-removed-box">
+    <div class="icon">
+        <i class="fas fa-check"></i> 
+    </div>
+    <h2 style="margin-top:12px;">Successfully Removed</h2>
+<p>Your order has been successfully Removed.</p>
+</div>
+
+<!-- exclamation cart alert box-->
+<div class="confirmation-box" id="exclamation-cart-alert-box">
+    <div class="icon">
+        <i class="fas fa-exclamation"></i> 
+    </div>
+    <h2 style="margin-top:12px;">Something Went Wrong</h2>
+<p>Your cart is empty, please try again.</p>
+</div>
+
+<!-- exclamation user alert box-->
+<div class="confirmation-box" id="exclamation-user-alert-box">
+    <div class="icon">
+        <i class="fas fa-exclamation"></i> 
+    </div>
+    <h2 style="margin-top:12px;">Something Went Wrong</h2>
+<p>Please sign in your account to continue.</p>
+</div>
+
  <!---------------Hero Section------------------>
 
     <section id="hero">
-        <h1 class="hero-text">Shopeefy</h1>
+        <h1 class="hero-text"><a href="index-main.html">Shopeefy</a></h1>
         <h2>Super value deals</h2>
         <h1>On all Products</h1>
         <p>Discover the best deals and enhance your <br> shopping experience with Shopeefy.</p>
@@ -331,7 +391,7 @@
             <div class="follow">
                 <h4>Follow Us</h4>
                 <div class="icon">
-                    <a href="https://www.facebook.com/share/1Hdhcui4pU/" class="fab fa-facebook-f"></a>
+                  <a href="https://www.facebook.com/share/1Hdhcui4pU/" class="fab fa-facebook"></a>
                     <a href="https://www.instagram.com/dwavezxy?igsh=MW5ldnU4ejR3Njg2Ng==" class="fab fa-instagram"></a>
                     <a href="https://github.com/Davedev0" class="fab fa-github"></a>
                 </div>
@@ -366,9 +426,10 @@
             <p> Ⓒ 2025 Dave All Rights Reserved | Shopeefy E-commers Website </p>
         </div>
     </footer>
-    <script src="script.js"></script>
-    <script src="navbar.js"></script>
-    <script src="onscroll.js"></script>
-    <script src="sidebar.js"></script>
+  <script src="script.js"></script>
+  <script src="navbar.js"></script>
+  <script src="onscroll.js"></script>
+  <script src="sidebar.js"></script>
+  <script src="loading-screen.js"></script>
 </body>
 </html>

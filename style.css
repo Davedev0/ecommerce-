@@ -167,6 +167,47 @@ body {
 }
 
 
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #088178;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none; 
+    z-index: 1000;
+}
+
+.loader {
+    border: 7px solid white;
+    border-top: 7px solid #088178;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.5s linear infinite;
+    box-shadow: 0 0 20px rgba(8, 129, 120, 0.5);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: white;
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
 /* Header Start*/
 #header {
     display: flex;
@@ -251,6 +292,7 @@ body {
     cursor: none;
     font-weight: 500;
     font-size: 15px;
+    margin-left:10px;
   }
   
   #header button a {
@@ -268,7 +310,7 @@ body {
   }
 /* Home Page*/
 #hero {
-    background-image: url("/e-commers/assets/images/herobg.jpg");
+    background-image: url("img-bg.jpg");
     height: 50vh;
     width: 100%;
     background-size: cover;
@@ -284,8 +326,10 @@ body {
 #hero h1 {
     color: #088178;
 }
-#hero .hero-text{
+#hero .hero-text a{
   color:#222;
+  text-decoration:none;
+  cursor:none;
 }
 #hero button {
     background-color: #088178;
@@ -326,7 +370,7 @@ body {
     text-align: center;
     line-height: 40px; 
     cursor:none;
-    font-size: 30px; 
+    font-size: 25px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
     z-index: 999;
@@ -1151,9 +1195,15 @@ footer .copyright p{
   transition: color 0.3s ease;
 }
 
-#form-details .profile-section .social-icons .icon:hover {
-  color: #06665e;
+#form-details .social-icons .icon  {
+  cursor:none;
 }
+
+
+#form-details .social-icons .icon:hover {
+  color: #222;
+}
+
 
 
 /* Start Media Query*/
@@ -1581,4 +1631,14 @@ footer .copyright p{
     .error-notification i {
         font-size: 18px;
     }
+    
+    .loader {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .loading-text{
+      font-size:1.5em;
+    }
 }
+

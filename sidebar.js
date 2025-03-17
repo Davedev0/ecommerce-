@@ -75,12 +75,41 @@ function addToCart(item) {
 
 // Function to remove item from cart
 function removeItem(index) {
-    cart.splice(index, 1); // Remove the item from the cart
-    localStorage.setItem('cart', JSON.stringify(cart)); // Save to localStorage
-    updateCartNotification(); 
-    displayCartItemsInSidebar(); 
-}
+    // Show the confirmation box and overlay
+    const overlay = document.getElementById('remove-overlay');
+    const confirmationBox = document.getElementById('remove-confirmation-box');
+    overlay.style.display = 'block';
+    confirmationBox.style.display = 'block';
 
+    document.getElementById('confirm-remove-btn').onclick = () => {
+        cart.splice(index, 1); // Remove the item from the cart
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Show success alert
+        const success = document.getElementById('success-alert-removed-box');
+        success.style.display = 'block';
+
+        // Hide success alert after 3 seconds
+        setTimeout(() => {
+            success.style.display = 'none';
+        }, 2000);
+
+        // Update the cart UI
+        updateCartNotification();
+        displayCartItemsInSidebar();
+
+        // Hide the confirmation box and overlay
+        overlay.style.display = 'none';
+        confirmationBox.style.display = 'none';
+    };
+
+    // Handle the "No" button click
+    document.getElementById('cancel-remove-btn').onclick = () => {
+        // Hide the confirmation box and overlay
+        overlay.style.display = 'none';
+        confirmationBox.style.display = 'none';
+    };
+}
 // Function to clear the cart (e.g., after checkout)
 function clearCart() {
     cart = []; // Empty the cart
@@ -92,21 +121,47 @@ function clearCart() {
 // Proceed to Checkout button
 document.getElementById('checkout-button').addEventListener('click', () => {
     const user = JSON.parse(localStorage.getItem('user'));
+    
+    if(cart.length === 0){
+     const exclamation = document.getElementById('exclamation-cart-alert-box');
+         exclamation.style.display = 'block';
+         
+         setTimeout(() => {
+        exclamation.style.display ='none';
+    }, 2000); 
+    return;
+    }
+
     if (user) {
-        user.orders = cart; // Save the cart as orders for the user
         let users = JSON.parse(localStorage.getItem('users')) || [];
         const existingUserIndex = users.findIndex(u => u.email === user.email);
+
         if (existingUserIndex !== -1) {
-            users[existingUserIndex] = user; // Update existing user
+            // Kung may existing user, i-update ang orders array
+            users[existingUserIndex].orders = users[existingUserIndex].orders || []; // Ensure orders array exists
+            users[existingUserIndex].orders.push(...cart); // Add new orders to existing orders
         } else {
-            users.push(user); // Add new user
+            // Kung wala, magdagdag ng bagong user
+            user.orders = cart; // Save the cart as orders for the user
+            users.push(user);
         }
+
         localStorage.setItem('users', JSON.stringify(users));
         clearCart(); // Clear the cart after checkout
-        alert('Order placed successfully!');
+         const success = document.getElementById('success-alert-box');
+         success.style.display = 'block';
+         
+         setTimeout(() => {
+        success.style.display ='none';
+    }, 2000); 
     } else {
-        alert('Please sign in to proceed with checkout.');
-    }
+     const exclamation = document.getElementById('exclamation-user-alert-box');
+         exclamation.style.display = 'block';
+         
+         setTimeout(() => {
+        exclamation.style.display ='none';
+    }, 2000); 
+  }
 });
 
 // Initial display of cart items and notification

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Fjalla One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Shopeefy | E-commerce 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        body {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #088178;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Poppins';
+        }
+
+        .fa {
+            color: #fff;
+            font-size: 150px;
+            align-items:center;
+            justify-self: center;
+            display:grid;
+        }
+
+        .logo-intro {
+            font-size: 100px;
+            color: #fff;
+            animation: fadeIn 1s ease-in;
+            margin-right: 10px;
+        }
+
+        .next-logo {
+            font-size: 100px;
+            color: #fff;
+            display: none;
+            margin-right:10px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+
+        @media (max-width: 768px) {
+            .logo-intro, .next-logo {
+                font-size: 50px;
+            }
+            .fa {
+                font-size: 80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main-content" style="display: none;"></div>
+
+    <div id="intro-screen">
+        <h1 class="logo-intro"><i class="fa fa-shopping-bag"></i>SHOPEEFY</h1>
+    </div>
+     
+    <h1 class="next-logo"><i class="fa fa-shopping-bag"></i>SHOPEEFY</h1>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('intro-screen').style.display = 'none';
+            document.querySelector('.next-logo').style.display = 'block';
+            window.location.href = "index.html";
+        }, 4000);
+    </script>
+</body>
+</html>

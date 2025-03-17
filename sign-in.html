@@ -157,7 +157,7 @@ button:hover {
 }
 
 .notification {
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed;
     right: 20px;
     background-color: white;
@@ -181,8 +181,8 @@ button:hover {
 /* Desktop - Notification at the bottom */
 @media (min-width: 768px) {
     .notification {
-        bottom: 20px; /* Position at the bottom for desktop */
-        top: auto; /* Override any top positioning */
+        bottom: 20px;
+        top: auto; 
     }
 }
 
@@ -275,8 +275,9 @@ button:hover {
     
    <div id="SignIn-notification" class="notification">
       <i class="fas fa-check-circle"></i>
-     <span>Successfully SignIn!</span>
-                </div>
+   <span>SignIn Successfully Please Wait!</span>
+ </div>
+ 
 <script>
 document.getElementById('form-signin').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -293,7 +294,7 @@ document.getElementById('form-signin').addEventListener('submit', function (even
         email: email,
         location: location,
         gender: gender,
-        orders: [] // Magdagdag ng orders array para sa mga binili ng user
+        orders: [] 
     };
 
     // Ipakita ang notification
@@ -316,10 +317,9 @@ document.getElementById('form-signin').addEventListener('submit', function (even
         localStorage.setItem('user', JSON.stringify(user));
     }
 
-    // Maghintay ng 3 seconds bago mag-redirect
     setTimeout(() => {
-        window.location.href = 'index.html'; // Redirect to home page after sign-in
-    }, 3000); // 3000 milliseconds = 3 seconds
+        window.location.href = 'index.html'; 
+    }, 3000); 
 });
 </script>
 </body>
