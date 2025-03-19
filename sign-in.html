@@ -6,321 +6,238 @@
     <title>Sign In Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-    
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
 
-.form-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    color: #333;
-}
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            color: #333;
+        }
 
-.form-container:hover{
-  transform: scale(1.01);
-}
+        .form-container:hover {
+            transform: scale(1.01);
+        }
 
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 37px;
-    font-weight: 600;
-    color: #088178; 
-}
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 37px;
+            font-weight: 600;
+            color: #088178;
+        }
 
-.form-container h2 a {
-  margin-right: 10px;
-}
+        .form-container h2 a {
+            margin-right: 10px;
+        }
 
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-.form-group {
-    margin-bottom: 15px;
-}
+        label {
+            display: block;
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 10px;
+        }
 
-label {
-    display: block;
-    font-size: 17px;
-    color: #555;
-    margin-bottom:10px;
-}
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            background: #f9f9f9;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
 
-input, select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 18px;
-    background: #f9f9f9;
-    color: #333;
-    transition: border-color 0.3s ease;
-}
+        input::placeholder {
+            color: #999;
+        }
 
-input::placeholder {
-    color: #999;
-}
+        input:focus {
+            outline: none;
+            border-color: #088178;
+            box-shadow: 0 0 5px rgba(8, 129, 120, 0.3);
+        }
 
-input:focus, select:focus {
-    outline: none;
-    border-color: #088178; 
-    box-shadow: 0 0 5px rgba(8, 129, 120, 0.3);
-}
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #088178;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.gender-group {
-    display: flex;
-    gap: 10px;
-}
+        button:hover {
+            background-color: #057862;
+            color: white;
+        }
 
-.gender-option {
-    display: flex;
-    align-items: center;
-}
+        .form-footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+        }
 
-.gender-option input {
-    width: auto;
-    margin-right: 7px;
-}
+        .form-footer a {
+            color: #088178;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-.gender-option label {
-    color: #555;
-    margin-top:13px;
-}  
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
 
-.gender-option input[type="radio"] {
-    display: none;
- }
+        .notification {
+            display: none;
+            position: fixed;
+            right: 20px;
+            background-color: white;
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            align-items: center;
+            font-size: 17px;
+            gap: 10px;
+            animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-out 2.5s;
+        }
 
-.gender-option label {
-    position: relative;
-    padding-left: 22px;
-    cursor: none;
-    display: inline-block;
-    line-height: 20px;
- }
+        .notification i {
+            color: green;
+            font-size: 18px;
+            animation: bounce 0.5s ease-in-out;
+        }
 
- .gender-option label::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 13px;
-    height: 13px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    background: #d9d9d9;
-    
-  }
+        @media (min-width: 768px) {
+            .notification {
+                bottom: 20px;
+                top: auto;
+            }
+        }
 
- .gender-option input[type="radio"]:checked +    label::before {
-   background-color: rgba(8, 129, 120,0.8);
-   box-shadow: 0 0 5px #088178;
-  border-color: #d9d9d9;
-  }
+        @media (max-width: 767px) {
+            .notification {
+                top: 20px;
+                bottom: auto;
+            }
+        }
 
-  .gender-option input[type="radio"]:focus + label::before {
-    box-shadow: 0 0 5px #088178;
-  }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #088178; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: none;
-    transition: background-color 0.3s ease;
-}
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
 
-button:hover {
-    background-color: #057862;
-    color:white;
-}
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
 
-.notification {
-    display: none; 
-    position: fixed;
-    right: 20px;
-    background-color: white;
-    color: #333;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    align-items: center;
-    font-size: 17px;
-    gap: 10px;
-    animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-out 2.5s;
-}
-
-.notification i {
-    color: green; /* Green checkmark for success */
-    font-size: 18px;
-    animation: bounce 0.5s ease-in-out;
-}
-
-/* Desktop - Notification at the bottom */
-@media (min-width: 768px) {
-    .notification {
-        bottom: 20px;
-        top: auto; 
-    }
-}
-
-/* Mobile - Notification at the top */
-@media (max-width: 767px) {
-    .notification {
-        top: 20px; /* Position at the top for mobile */
-        bottom: auto; /* Override any bottom positioning */
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-}
-
-@media (max-width: 465px) {
-    .form-container {
-        max-width: 320px;
-        padding: 30px;
-    }
-}
+        @media (max-width: 465px) {
+            .form-container {
+                max-width: 320px;
+                padding: 30px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
-     <h2><a class="fas fa-lock"></a>Sign In</h2>
+        <h2><a class="fas fa-lock"></a>Sign In</h2>
         <form id="form-signin">
             <div class="form-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
 
-            <div class="form-group">
-                <label for="location">Exact Location</label>
-                <input type="text" id="location" name="location" placeholder="Enter your location" required>
-            </div>
-
-    <div class="form-group">
-       <label>Gender</label>
-          <div class="gender-group">
-             <div class="gender-option">
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Male</label>
-              </div>
-                
-    <div class="gender-option">
-       <input type="radio" id="female" name="gender" value="female">
-       <label for="female">Female</label>
-    </div>
-           
-     <div class="gender-option">
-        <input type="radio" id="other" name="gender" value="other">
-              <label for="other">Other</label>
-                 </div>
-                </div>
-              </div>
-          <button type="submit">Sign In</button>
+            <button type="submit">Sign In</button>
         </form>
+
+        <div class="form-footer">
+            <p>Don't have an account? <a href="sign-up.html">Sign Up</a></p>
+        </div>
     </div>
-    
-   <div id="SignIn-notification" class="notification">
-      <i class="fas fa-check-circle"></i>
-   <span>SignIn Successfully Please Wait!</span>
- </div>
- 
-<script>
-document.getElementById('form-signin').addEventListener('submit', function (event) {
-    event.preventDefault();
 
-    // Kunin ang mga value mula sa form
-    const fullname = document.getElementById('fullname').value;
-    const email = document.getElementById('email').value;
-    const location = document.getElementById('location').value;
-    const gender = document.querySelector('input[name="gender"]:checked').value;
+    <div id="SignIn-notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Sign In Successfully! Redirecting...</span>
+    </div>
 
-    // Gumawa ng user object
-    const user = {
-        fullname: fullname,
-        email: email,
-        location: location,
-        gender: gender,
-        orders: [] 
-    };
+    <script>
+        document.getElementById('form-signin').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-    // Ipakita ang notification
-    const sign = document.getElementById('SignIn-notification');
-    sign.style.display = 'block';
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-    // I-save ang user information sa localStorage
-    let users = JSON.parse(localStorage.getItem('users')) || [];
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.username === username && u.password === password);
 
-    // Check kung may existing user na gamit ang email
-    const existingUser = users.find(u => u.email === email);
+            if (user) {
+                localStorage.setItem('user', JSON.stringify(user));
 
-    if (existingUser) {
-        // Kung may existing user, gamitin yung existing user
-        localStorage.setItem('user', JSON.stringify(existingUser));
-    } else {
-        // Kung wala, magdagdag ng bagong user
-        users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
-        localStorage.setItem('user', JSON.stringify(user));
-    }
+                const signInNotification = document.getElementById('SignIn-notification');
+                signInNotification.style.display = 'flex';
 
-    setTimeout(() => {
-        window.location.href = 'index.html'; 
-    }, 3000); 
-});
-</script>
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
 </body>
 </html>

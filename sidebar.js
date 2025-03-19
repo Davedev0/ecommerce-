@@ -44,7 +44,7 @@ function displayCartItemsInSidebar() {
             <div class="cart-item-details">
                 <h3>${item.name}</h3>
                 <p>Size: ${item.size}</p>
-                <p>Quantity: ${item.quantity}</p>
+                <p>Quantity: x${item.quantity}</p>
                 <p>Price: ${item.price}</p>
             </div>
             <button class="remove-button" onclick="removeItem(${index})">Remove</button>
