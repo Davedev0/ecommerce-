@@ -7,7 +7,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_bag_speed" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
   <link rel="stylesheet" href="style-admin.css">
   <link rel="stylesheet" href="style-alert.css">
     <style>
@@ -107,6 +107,21 @@
         </div>
     </div>
     
+    
+    <!-- Confirmation Box -->
+<div class="overlay" id="overlay"></div>
+<div class="confirmation-box" id="confirmation-box">
+    <div class="icon">
+        <i class="fas fa-exclamation"></i>
+    </div>
+    <h2>Confirmation</h2>
+    <p>Are you sure you want to sign out?</p>
+    <div class="buttons">
+        <button class="yes-btn" onclick="confirmSignOut()">Yes</button>
+        <button class="no-btn" onclick="cancelSignOut()">No</button>
+    </div>
+</div>
+
     
 <!-- Confirmation Box for Remove Notification -->
 <div class="overlay" id="notification-overlay"></div>

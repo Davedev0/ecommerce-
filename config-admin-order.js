@@ -22,7 +22,7 @@ function displayAllOrders() {
                                 <strong>Product:</strong> ${order.name}<br>
                                 <strong>Price:</strong> ${order.price}<br>
                                 <strong>Size:</strong> ${order.size}<br>
-                                <strong>Quantity:</strong> ${order.quantity}
+                                <strong>Quantity:</strong> x${order.quantity}
                             </li>
                         </ul>
                     </div>
@@ -136,7 +136,7 @@ function confirmRemoveOrder(userIndex, orderIndex) {
         // Hide success alert after 3 seconds
         setTimeout(() => {
             success.style.display = 'none';
-        }, 3000);
+        }, 1000);
   
   
   displayAllOrders(); 
