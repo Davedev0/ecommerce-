@@ -56,7 +56,7 @@ button.normal {
     color: #fff;
     background-color: #088178;
     border-radius: 4px;
-    cursor: none;
+    cursor: pointer;
     border: none;
     outline: none;
     transition: 0.2s;
@@ -81,7 +81,7 @@ body {
 
 .trash {
   font-size:15px;
-  cursor: none;
+  cursor: pointer;
   color:red;
 }
 
@@ -241,7 +241,7 @@ body {
     font-weight: 600;
     color: white;
     transition: 0.3s ease;
-    cursor:none;
+    cursor:pointer;
 }
 
 #navbar li a:hover,
@@ -289,7 +289,7 @@ body {
     border: 1.5px solid transparent;
     padding: 4px 15px;
     border-radius:4px;
-    cursor: none;
+    cursor: pointer;
     font-weight: 500;
     font-size: 15px;
     margin-left:10px;
@@ -298,7 +298,7 @@ body {
   #header button a {
   text-decoration:none;
   color: #fff;
-  cursor:none;
+  cursor:pointer;
   }
    #header button:hover{
    color: #088178;
@@ -311,7 +311,7 @@ body {
 /* Home Page*/
 #hero {
     background-image: url("img-bg.jpg");
-    height: 40vh;
+    height: 90vh;
     width: 100%;
     background-size: cover;
     background-position: top 20% right 30%;
@@ -329,14 +329,14 @@ body {
 #hero .hero-text a{
   color:#222;
   text-decoration:none;
-  cursor:none;
+  cursor:pointer;
 }
 #hero button {
     background-color: #088178;
     border: 1.5px solid transparent;
     padding: 10px 20px;
     border-radius:4px;
-    cursor: none;
+    cursor: pointer;
     font-weight: 700;
     font-size: 15px;
 }
@@ -344,7 +344,7 @@ body {
 #hero button a{
   text-decoration:none;
   color: #fff;
-  cursor:none;
+  cursor:pointer;
 }
  #hero button:hover{
    color: #088178;
@@ -369,7 +369,7 @@ body {
     height: 40px;
     text-align: center;
     line-height: 40px; 
-    cursor:none;
+    cursor:pointer;
     font-size: 25px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
@@ -460,7 +460,7 @@ body {
 }
 
 #product1 .pro .img-target{
-  cursor: none;
+  cursor: pointer;
 }
 
 #product1 .pro img {
@@ -482,7 +482,7 @@ body {
     padding-top: 7px;
     color: #1a1a1a;
     font-size: 14px;
-    cursor:none;
+    cursor:pointer;
 }
 
 #product1 .pro .des a:hover{
@@ -513,7 +513,7 @@ body {
     position: absolute;
     bottom: 20px;
     right: 10px;
-    cursor:none;
+    cursor:pointer;
 }
 
 #product1 .pro .cart:hover{
@@ -524,7 +524,7 @@ body {
 .input-box {
   position: relative;
   height: 76px;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   background: #fff;
   margin: 0 20px;
@@ -653,7 +653,7 @@ background-color: rgba(50, 50, 50, 0.4);
     position: relative; 
     z-index: 2;
     text-decoration:none;
-    cursor:none;
+    cursor:pointer;
 }
 
 #banner a.normal {
@@ -663,7 +663,7 @@ background-color: rgba(50, 50, 50, 0.4);
     color: #fff;
     background-color: #088178;
     border-radius: 4px;
-    cursor: none;
+    cursor: pointer;
     border: none;
     outline: none;
     border: none;
@@ -702,7 +702,7 @@ background-color: rgba(50, 50, 50, 0.4);
 
 #newsletter p span a {
   color: #ffbd27;
-  cursor:none;
+  cursor:pointer;
 }
 
 
@@ -739,7 +739,7 @@ footer a {
     color: #222;
     margin-bottom: 3px;
     color:#fff;
-    cursor: none;
+    cursor: pointer;
 }
 
 footer .follow {
@@ -775,7 +775,7 @@ footer .copyright p{
 #page-header {
     position: relative;
     width: 100%;
-    height: 25vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -824,7 +824,7 @@ footer .copyright p{
     display: inline-block;
     width: 150px; 
     text-align: center; 
-    cursor:none;
+    cursor:pointer;
     border:none;
 }
 
@@ -846,7 +846,7 @@ footer .copyright p{
     color: #fff;
     font-weight: 600;
     font-size: 20px;
-    cursor:none;
+    cursor:pointer;
     border: 1.5px solid transparent;
 }
 
@@ -941,7 +941,7 @@ footer .copyright p{
   color: #fff;
   background-color: #088178;
   border-radius: 4px;
-  cursor: none;
+  cursor: pointer;
   border: none;
   outline: none;
   transition: 0.2s;
@@ -960,7 +960,7 @@ footer .copyright p{
   color: #088178;
   background-color: transparent;
   border-radius: 4px;
-  cursor: none;
+  cursor: pointer;
   border: none;
   outline: none;
   transition: 0.2s;
@@ -1018,7 +1018,7 @@ footer .copyright p{
             border: 1.5px solid transparent;
             padding: 7px 13px;
             border-radius:4px;
-            cursor: none;
+            cursor: pointer;
             font-weight: 600;
             font-size: 14px;
         }
@@ -1026,7 +1026,7 @@ footer .copyright p{
          #about-us button a {
             text-decoration:none;
             color: #fff;
-            cursor:none;
+            cursor:pointer;
         }
         
         #about-us button:hover{
@@ -1076,7 +1076,7 @@ footer .copyright p{
     color: #088178;
     background-color: #fddde4;
     text-decoration: none;
-    cursor: none;
+    cursor: pointer;
 }
 
 #feature .fe-box:nth-child(2) a {
@@ -1229,7 +1229,7 @@ footer .copyright p{
   border: none;
   border-radius: 8px;
   font-size: 16px;
-  cursor: none;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -1288,7 +1288,7 @@ footer .copyright p{
 }
 
 #form-details .social-icons .icon  {
-  cursor:none;
+  cursor:pointer;
 }
 
 
@@ -1386,7 +1386,7 @@ footer .copyright p{
 
     
     #mobile a {
-      cursor:none;
+      cursor:pointer;
     }
     
     #mobile .logo-mobile{
@@ -1407,7 +1407,7 @@ footer .copyright p{
         left: 30px;
         color: #222;
         font-size: 24px;
-        cursor:none;
+        cursor:pointer;
     }
     
     #close i:hover{

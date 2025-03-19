@@ -39,7 +39,7 @@
             border: none;
             color: white;
             font-size: 30px;
-            cursor: none;
+            cursor: pointer;
         }
 
         /* Overlay Styles */
@@ -96,7 +96,7 @@
             border: none;
             padding: 5px 10px;
             border-radius: 5px;
-            cursor: none;
+            cursor: pointer;
         }
         
         .remove-button:hover{
@@ -144,7 +144,7 @@
             border: none;
             border-radius: 8px;
             font-size: 1.2rem;
-            cursor: none;
+            cursor: pointer;
             margin-top: 15px;
             width: 100%;
             transition: background 0.3s ease;
@@ -161,14 +161,14 @@
             padding: 15px 30px;
             border-radius: 8px;
             font-size: 1.2rem;
-            cursor: none;
+            cursor: pointer;
             margin-top: 20px;
             width: 100%;
         }
         .payment-button a{
           text-decoration:none;
            color: #088178;
-           cursor:none;
+           cursor:pointer;
         }
         .payment-button:hover{
             background-color: #057862; 
