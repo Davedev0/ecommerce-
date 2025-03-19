@@ -606,7 +606,7 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 20vh;
+    height: 60vh;
     background-image: url("banner2.jpg");
     background-size: cover;
     background-position: center;
@@ -864,6 +864,8 @@ footer .copyright p{
 #prodetails{
   display:flex;
   background-color: white;
+  justify-content: center;
+  align-items:center;
 }
 
 #prodetails  select{
