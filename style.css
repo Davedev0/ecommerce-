@@ -533,6 +533,7 @@ body {
   align-items:center;
   display:flex;
   margin-top:30px;
+ margin-left:40px;
 }
 .input-box i,
 .input-box .button {
