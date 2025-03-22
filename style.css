@@ -685,7 +685,7 @@ background-color: rgba(50, 50, 50, 0.4);
   flex-wrap: wrap;
   align-items: center;
   background-position: 20% 30%;
-  background-color: #041e42;
+  background-color: #088178;
   margin:0;
   right:0;
   left:0;
@@ -807,7 +807,7 @@ footer .copyright p{
 #page-header h2,
 #page-header p {
     color: #fff;
-    font-size: 33px;
+    font-size: 25px;
     position: relative; 
     z-index: 2;
     font-weight: 500;
