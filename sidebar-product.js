@@ -17,7 +17,8 @@
             const addedCart = document.getElementById('success-alert-added-box');
             addedCart.style.display = 'block';
             setTimeout(() => {
-              addedCart.style.display = 'none';
-                window.location.href="index.html";
+            addedCart.style.display = 'none';
+            localStorage.setItem('showAlert', 'true');
+            window.location.href="index.html";
             }, 2000);
           });

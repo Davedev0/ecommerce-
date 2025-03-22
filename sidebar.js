@@ -137,9 +137,8 @@ document.getElementById('checkout-button').addEventListener('click', () => {
         const existingUserIndex = users.findIndex(u => u.email === user.email);
 
         if (existingUserIndex !== -1) {
-            // Kung may existing user, i-update ang orders array
-            users[existingUserIndex].orders = users[existingUserIndex].orders || []; // Ensure orders array exists
-            users[existingUserIndex].orders.push(...cart); // Add new orders to existing orders
+            users[existingUserIndex].orders = users[existingUserIndex].orders || []; 
+            users[existingUserIndex].orders.push(...cart); 
         } else {
             // Kung wala, magdagdag ng bagong user
             user.orders = cart; // Save the cart as orders for the user

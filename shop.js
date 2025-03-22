@@ -461,19 +461,28 @@ function shuffleArray(array) {
 }
 
 function generateProductItems() {
-    const proContainer = document.getElementById("proContainer");
+    const proContainer= document.getElementById("proContainer");
 
     const shuffledProducts = shuffleArray(products);
 
     shuffledProducts.forEach(product => {
+       
+      const truncatedTitle = product.title.length > 20
+        ? product.title.substring(0, 20) + '...' 
+            : product.title;
+      
+       const truncatedCategory = product.category.length > 25
+            ? product.category.substring(0, 25) + '...' 
+            : product.category;
+            
         const productHTML = `
             <div class="pro">
                 <a href="sproduct.html?id=${product.id}" class="img-target">
                     <img src="${product.image}" alt="${product.title}"/>
                 </a>
                 <div class="des">
-                    <span>${product.category}</span>
-                    <h5><a href="sproduct.html?id=${product.id}">${product.title}</a></h5>
+                    <span>${truncatedCategory}</span>
+                    <h5><a href="sproduct.html?id=${product.id}">${truncatedTitle}</a></h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -486,10 +495,8 @@ function generateProductItems() {
                 <a href="sproduct.html?id=${product.id}"><i class="fas fa-shopping-cart cart"></i></a>
             </div>
         `;
-
         proContainer.innerHTML += productHTML;
     });
 }
 
-// I-call ang function para mag-generate ng mga product items
 generateProductItems();
