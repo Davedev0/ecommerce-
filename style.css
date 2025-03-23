@@ -610,7 +610,7 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     background-image: url("banner2.jpg");
     background-size: cover;
     background-position: center;
@@ -701,7 +701,7 @@ background-color: rgba(50, 50, 50, 0.4);
 #newsletter p {
   font-size: 16px;
   font-weight: 600;
-  color: #818ea0;
+  color: #fff;
 }
 
 #newsletter p span a {
@@ -807,7 +807,7 @@ footer .copyright p{
 #page-header h2,
 #page-header p {
     color: #fff;
-    font-size: 25px;
+    font-size: 30px;
     position: relative; 
     z-index: 2;
     font-weight: 500;
