@@ -371,7 +371,7 @@ body {
 /* Home Page*/
 #hero {
   background-image: url('img-bg.png');
-  min-height: 30vh;
+  min-height:100vh;
   background-color: white;
   width: 100%;
   background-size: cover;
