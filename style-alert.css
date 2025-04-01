@@ -65,7 +65,7 @@
     border: none;
     font-size: 1.3rem;
     border-radius:5px;
-    cursor: pointer;
+    cursor: none;
     transition: background 0.3s ease, transform 0.2s ease;
     flex: 1;
     max-width: 110px;
@@ -98,7 +98,7 @@
     border: none;
     font-size: 1.3rem;
     border-radius:5px;
-    cursor: pointer;
+    cursor: none;
     transition: background 0.3s ease, transform 0.2s ease;
     flex: 1;
     max-width: 110px;

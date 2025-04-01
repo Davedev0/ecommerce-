@@ -41,7 +41,23 @@ const featureProducts = [
     image: "img-adidas1.jpg",
     title: "Adidas Essentials 3 Stripe Polo Shirt",
     price: "₱399"
-  }
+  },
+  
+  {
+      category: "Men's Polo Shirt | Gucci",
+      id: "gucci6",
+      image: "img-gucci6.jpg",
+      title: "Gucci Homme - Tshirt et Polo Homme Polo Black",
+      price: "₱2500"
+    },
+    
+    {
+       category: "Men's Polo Shirt | Calvin Klein",
+       id: "calvin1",
+       image: "img-calvin1.jpg",
+       title: "Calvin Klein Kids Logo-Print Polo Shirt Black",
+       price: "₱300"
+     }
 ];
 
 function shuffleArray(array) {

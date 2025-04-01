@@ -88,18 +88,21 @@
     </button>
 
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <h2>Admin Dashboard</h2>
-        <hr>
-        <ul>
-            <li><a href="admin-order.html"><i class="fas fa-archive"></i>Order Details</a></li>
-            <li><a class="active"><i class="fas fa-bell"></i>Notifications</a></li>
-            <li><a href="sign-in.html"><i class="fas fa-lock"></i> User Sign In</a></li>
-            <li><a><i class="fa fa-gear" style="font-size:25px;"></i>Settings</a></li>
-            <li><a id="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
-        </ul>
-    </div>
-
+ <section class="sidebar" id="sidebar">
+   <img src="img-profile.jpg" alt="Profile">
+  <p>Master Dave</p>
+    <h2>Admin Dashboard</h2>
+      <hr>
+  <ul>
+    <li><a href="admin-order.html"><i class="fas fa-archive"></i>Order Details</a></li>
+    <li><a class="active"><i class="fas fa-bell"></i>Notifications</a></li>
+    <li><a href="sign-in.html"><i class="fas fa-lock"></i> User Sign In</a></li>
+    <li><a><i class="fa fa-gear" style="font-size:25px;"></i>Settings</a></li>
+    <li><a id="sign-out-btn">
+    <i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+    </ul>
+  </section>    
+ 
     <!-- Main Content -->
     <div class="content">
         <h1><i class="fas fa-bell"></i>Notifications</h1>
@@ -213,7 +216,7 @@ function confirmRemoveNotification(index) {
         // Load notifications when the page loads
         document.addEventListener('DOMContentLoaded', loadNotifications);
     </script>
- <script src="config-admin-signout.js"></script>
- <script src="config-admin-toggle.js"></script>
+ <script src="admin-signout.js"></script>
+ <script src="admin-toggle.js"></script>
 </body>
 </html>

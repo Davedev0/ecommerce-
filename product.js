@@ -404,21 +404,59 @@ const products = {
     }
 };
         
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
 
-        if (productId && products[productId]) {
-            const product = products[productId];
-            document.getElementById("product-category").textContent = product.category;
-            document.getElementById("product-name").textContent = product.name;
-            document.getElementById("product-price").textContent = product.price;
-            document.getElementById("product-img").src = product.image;
-            document.getElementById("product-description").textContent = product.description;
-        } else {
-            document.getElementById("product-name").textContent = "Product Not Found";
-        }
-        
-        
+if (productId && products[productId]) {
+    const product = products[productId];
+    document.getElementById("product-category").textContent = product.category;
+    document.getElementById("product-name").textContent = product.name;
+    document.getElementById("product-price").textContent = product.price;
+    document.getElementById("product-img").src = product.image;
+    document.getElementById("product-description").textContent = product.description;
+
+    showRelatedProducts(productId);
+} else {
+    document.getElementById("product-name").textContent = "Product Not Found";
+}
+
+function showRelatedProducts(currentProductId) {
+    const currentProduct = products[currentProductId];
+    if (!currentProduct) return;
+
+    const brand = currentProduct.category.split('|')[1].trim();
+    const relatedContainer = document.getElementById('relatedProductsContainer');
     
-        
-        
+    Object.entries(products).forEach(([id, product]) => {
+        if (product.category.includes(brand) && id !== currentProductId) {
+            const truncatedTitle = product.name.length > 20 
+                ? product.name.substring(0, 20) + '...' 
+                : product.name;
+                
+            const truncatedCategory = product.category.length > 25
+                ? product.category.substring(0, 25) + '...' 
+                : product.category;
+
+            relatedContainer.innerHTML += `
+                <div class="pro">
+                    <a href="sproduct.html?id=${id}">
+                        <img src="${product.image}" alt="${product.name}"/>
+                    </a>
+                    <div class="des">
+                        <span>${truncatedCategory}</span>
+                        <h5>${truncatedTitle}</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>${product.price}</h4>
+                    </div>
+                    <a href="sproduct.html?id=${id}"><i class="fas fa-shopping-cart cart"></i></a>
+                </div>
+            `;
+        }
+    });
+}

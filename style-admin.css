@@ -20,15 +20,27 @@
         }
 
         .sidebar h2 {
-            text-align: left;
-            margin-top:20px;
+            text-align: center;
+            margin-top:10px;
+        }
+        .sidebar p {
+            text-align: center;
+            font-size:15px;
+        }
+        
+        .sidebar img{
+          height:80px;
+          width:80px;
+          margin:auto;
+          display:block;
+          border-radius:50%;
         }
         .sidebar ul {
             list-style: none;
             padding: 0;
         }
         .sidebar ul li {
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .sidebar ul li a {
             color: white;
@@ -36,8 +48,7 @@
             font-size: 22px;
             font-weight: 400;
             display: flex;
-            align-items: center;
-            gap: 20px;
+            gap: 10px;
             margin-bottom:40px;
             cursor:pointer;
         }
@@ -62,6 +73,10 @@
         .content h1 {
             margin-bottom: 20px;
             margin-left: 10px;
+         }
+         
+         .content span{
+           margin-left:15rem;
          }
          
          .content i{
@@ -435,7 +450,7 @@
             }
             
           .sidebar h2 {
-          text-align: left;
+          text-align: center;
           margin-top: 40px;
         }
             .sidebar.active {
@@ -451,6 +466,10 @@
             
             h1{
               margin-top: 50px;
+            }
+            
+            .content span{
+              display:none;
             }
             
         }
