@@ -998,7 +998,7 @@ footer .copyright p{
 #about-head {
     display: flex;
     align-items: center;
-    padding: 90px;
+    padding: 120px;
 }
 
 #about-head img {
@@ -1494,21 +1494,17 @@ footer .copyright p{
     #page-header{
       height:40vh;
     }
-    #page-header .page-container{
-  background-color:rgba(8, 129, 120, 0.5);
-  padding:20px;
-  margin:0px;
-}
 }
    
    /* Responsive */
 @media screen and (max-width: 500px) {
   .input-box {
     height: 65px;
-    margin:  0px;
+    margin:  50px;
     max-width:300px;
     padding:15px;
     margin-bottom:12px;
+    
   }
 
   .input-box i {
@@ -1653,6 +1649,7 @@ footer .copyright p{
         
     #about-head {
         flex-direction: column;
+        padding:20px;
     }
 
     #about-head img {
